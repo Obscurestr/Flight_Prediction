@@ -53,6 +53,7 @@ We standardized each entry and extracted:
 - Duration in hours
 - Duration in minutes
 - Total duration in minutes
+- 
 <img width="1689" height="164" alt="Screenshot 2025-12-12 190747" src="https://github.com/user-attachments/assets/ae157b04-c521-409c-95ee-e6925a0adecd" />
 
 # 4. Exploratory Data Analysis (EDA)
@@ -85,6 +86,7 @@ This chart shows the typical price ranges for each airline. Some carriers have c
 ## 5.1 Airline Encoding
 
 Airlines were converted into numerical values based on average price.
+
 <img width="416" height="274" alt="Screenshot 2025-12-12 192731" src="https://github.com/user-attachments/assets/391e5537-9f68-4b85-abbc-4dc40aa928a9" />
 
 This numeric conversion allows the machine-learning model to recognize which airlines are premium and which are budget-friendly.
@@ -93,6 +95,7 @@ This numeric conversion allows the machine-learning model to recognize which air
 We unified “New Delhi” → “Delhi” and encoded destinations based on average price.
 
 <img width="695" height="29" alt="Screenshot 2025-12-12 193609" src="https://github.com/user-attachments/assets/77f52729-90ac-4de2-bde9-3062a3404c6f" />
+
 ## 5.3 Total Stops
 
 Mapped to numbers for modeling:
