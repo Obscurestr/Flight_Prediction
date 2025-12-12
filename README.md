@@ -144,12 +144,48 @@ Typical results:
 4. Destination
 5. Journey Month
 
+# 8. Model Building
+## 8.1 Random Forest Regressor
 
+The main model used for prediction.
+R² Score: 0.8188320914090159
 
+MAE: 1166.2465289582558
 
+MSE: 3479097.837327007
 
+RMSE: 1865.2339899666763
 
+MAPE: 13.135809518140947
 
+R² close to 1.0 means very good predictive accuracy.
 
+MAPE < 15% means excellent reliability for pricing.
 
+## 8.2 Decision Tree Regressor (Baseline)
+R²: 0.6949885058427925
 
+MAE: 1387.4563055397996
+
+MAPE: 15.442938513427615
+
+This simple model performs worse than Random Forest and confirms the value of using an advanced ensemble model.
+
+# 9. Hyperparameter Optimization
+
+We improved the model with RandomizedSearchCV.
+
+<img width="1006" height="113" alt="Screenshot 2025-12-12 202212" src="https://github.com/user-attachments/assets/fa67f3b9-05d7-427a-8d34-4a03c6674ec5" />
+
+We tested many combinations of model settings to find the best-performing configuration for your data.
+# 10. Final Model Export
+
+The final optimized model is saved as:
+
+rf_random.pk1
+
+This can be loaded into:
+- Web apps
+- Prediction dashboards
+- Mobile apps
+- Backend APIs
