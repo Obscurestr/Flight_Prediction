@@ -27,6 +27,7 @@ We converted timestamps into structured components:
 - Arrival hour & minute
 
 This allows us to understand when people travel and how timing influences price.
+
 <img width="1678" height="162" alt="Screenshot 2025-12-12 185613" src="https://github.com/user-attachments/assets/dce43cfe-93a8-4bc2-bb20-5cf0af6a90ba" />
 ## 3.2 Categorizing Departure Time
 We grouped departure hours into categories consumers understand:
@@ -38,6 +39,7 @@ We grouped departure hours into categories consumers understand:
 - Late Night
 
 Used for identifying expensive travel windows.
+
 <img width="560" height="517" alt="image" src="https://github.com/user-attachments/assets/e612958f-e2c2-4a56-9b3d-7b6d13b54bb5" />
 ## 3.3 Duration Preprocessing
 Duration appears in inconsistent formats (“2h”, “50m”, “3h 10m”).
@@ -71,20 +73,13 @@ Demonstrates which airlines typically charge more.
 
 <img width="589" height="665" alt="image" src="https://github.com/user-attachments/assets/16486b50-81e7-43b7-9302-a1cff4914dad" />
 This chart shows the typical price ranges for each airline. Some carriers have consistently higher prices, suggesting a premium service.
-| Airline Group                          | Price Level     | Notes                              |
-|----------------------------------------|------------------|-------------------------------------|
-| Jet Airways Business                   | Very high        | Luxury pricing                      |
-| Vistara Premium Economy                | High             | More stable than Jet Airways Business |
-| Air India / Jet Airways Economy        | Medium–High      | Big variability                     |
-| IndiGo / SpiceJet / GoAir / Air Asia   | Low              | Stable, budget airlines             |
-| Multiple carriers                      | Very inconsistent| Many expensive combos               |
-| Trujet                                 | Very low         | Cheapest option                     |
 
 # 5. Encoding Categorical Variables
 ## 5.1 Airline Encoding
 
 Airlines were converted into numerical values based on average price.
 <img width="416" height="274" alt="Screenshot 2025-12-12 192731" src="https://github.com/user-attachments/assets/391e5537-9f68-4b85-abbc-4dc40aa928a9" />
+
 This numeric conversion allows the machine-learning model to recognize which airlines are premium and which are budget-friendly.
 ## 5.2 Destination Encoding
 
@@ -122,11 +117,13 @@ Upper bound = 23017.0
 
 Prices greater than 35,000 were replaced with the median price.
 <img width="606" height="432" alt="image" src="https://github.com/user-attachments/assets/de246a63-cb79-405f-a159-31d7436a240b" />
+
 This prevents unusually high prices from distorting the model.
 # 7. Feature Importance
 
 We used Mutual Information Regression to identify the most influential features.
 <img width="1688" height="453" alt="Screenshot 2025-12-12 195203" src="https://github.com/user-attachments/assets/6d943c28-1c3a-4fef-ac95-401e31f94dfe" />
+
 Typical results:
 1. Total Stops
 2. Duration Total Minutes
