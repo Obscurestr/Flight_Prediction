@@ -12,12 +12,15 @@ The final model (Random Forest Regressor) provides accurate price predictions an
 # 2. Dataset Overview
 This dataset contains flight booking information including airline, journey date, departure time, arrival time, route, flight duration, total stops, and ticket price. It includes several major Indian airlines and covers both direct and connecting flights.
 <img width="1114" height="464" alt="Screenshot 2025-12-12 182141" src="https://github.com/user-attachments/assets/96a3d8b5-cc3f-4430-b23d-e8141d28ba36" />
+
 ## Key characteristics:
 - ~10,000 flight records
 - Columns include Airline, Price, Departure Time, Arrival Time, Route, Duration, Stops, Source, Destination and Additional Information.
 - After cleaning, there are no missing values.
 <img width="266" height="519" alt="Screenshot 2025-12-12 183205" src="https://github.com/user-attachments/assets/1535421e-e497-4227-a409-c5aced59751d" />
+
 # 3. Data Cleaning & Preparation
+
 ## 3.1 Converting Dates & Times
 We converted timestamps into structured components:
 - Journey Day
@@ -29,6 +32,7 @@ We converted timestamps into structured components:
 This allows us to understand when people travel and how timing influences price.
 
 <img width="1678" height="162" alt="Screenshot 2025-12-12 185613" src="https://github.com/user-attachments/assets/dce43cfe-93a8-4bc2-bb20-5cf0af6a90ba" />
+
 ## 3.2 Categorizing Departure Time
 We grouped departure hours into categories consumers understand:
 -Early Morning
@@ -41,6 +45,7 @@ We grouped departure hours into categories consumers understand:
 Used for identifying expensive travel windows.
 
 <img width="560" height="517" alt="image" src="https://github.com/user-attachments/assets/e612958f-e2c2-4a56-9b3d-7b6d13b54bb5" />
+
 ## 3.3 Duration Preprocessing
 Duration appears in inconsistent formats (“2h”, “50m”, “3h 10m”).
 
@@ -49,6 +54,7 @@ We standardized each entry and extracted:
 - Duration in minutes
 - Total duration in minutes
 <img width="1689" height="164" alt="Screenshot 2025-12-12 190747" src="https://github.com/user-attachments/assets/ae157b04-c521-409c-95ee-e6925a0adecd" />
+
 # 4. Exploratory Data Analysis (EDA)
 ## 4.1 Price vs. Total Duration
 
@@ -72,6 +78,7 @@ Shows stop count influence on price clusters.
 Demonstrates which airlines typically charge more.
 
 <img width="589" height="665" alt="image" src="https://github.com/user-attachments/assets/16486b50-81e7-43b7-9302-a1cff4914dad" />
+
 This chart shows the typical price ranges for each airline. Some carriers have consistently higher prices, suggesting a premium service.
 
 # 5. Encoding Categorical Variables
@@ -84,6 +91,7 @@ This numeric conversion allows the machine-learning model to recognize which air
 ## 5.2 Destination Encoding
 
 We unified “New Delhi” → “Delhi” and encoded destinations based on average price.
+
 <img width="695" height="29" alt="Screenshot 2025-12-12 193609" src="https://github.com/user-attachments/assets/77f52729-90ac-4de2-bde9-3062a3404c6f" />
 ## 5.3 Total Stops
 
@@ -116,12 +124,14 @@ Upper bound = 23017.0
 ## 6.2 Handling Outliers
 
 Prices greater than 35,000 were replaced with the median price.
+
 <img width="606" height="432" alt="image" src="https://github.com/user-attachments/assets/de246a63-cb79-405f-a159-31d7436a240b" />
 
 This prevents unusually high prices from distorting the model.
 # 7. Feature Importance
 
 We used Mutual Information Regression to identify the most influential features.
+
 <img width="1688" height="453" alt="Screenshot 2025-12-12 195203" src="https://github.com/user-attachments/assets/6d943c28-1c3a-4fef-ac95-401e31f94dfe" />
 
 Typical results:
